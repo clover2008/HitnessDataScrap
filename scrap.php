@@ -10,19 +10,19 @@
 class scrap {
 	const DB_HOST = 'localhost';		//主机地址
 	const DB_NAME = 'jianshen_scrap';	//数据库名
-	const DB_USER = 'root';				//用户名
-	const DB_PWD  = 'root';				//密码
-	const DB_PORT = '3306';				//端口
+	const DB_USER = 'root';			//用户名
+	const DB_PWD  = 'root';			//密码
+	const DB_PORT = '3306';			//端口
 	const AUTHORIZATION = '5f464d44-515b-4826-ae31-99020981d2a1';//授权验证码
 	
-	public $member_list_url;			//用户列表抓取地址
-	public $basic_data_url;				//会员基本信息抓取地址
-	public $contracts_data_url;			//合同信息抓取地址
-	public $products_data_url;			//产品信息抓取地址
-	public $transfer_data_url;			//客户介绍抓取地址
-	public $contracts_info_url;			//合同详细信息列表地址
-	public $user_headimg_prefixurl;     //用户头像地址前缀
-	public $user_imgs_dir;				//头像存储目录
+	public $member_list_url;		//用户列表抓取地址
+	public $basic_data_url;			//会员基本信息抓取地址
+	public $contracts_data_url;		//合同信息抓取地址
+	public $products_data_url;		//产品信息抓取地址
+	public $transfer_data_url;		//客户介绍抓取地址
+	public $contracts_info_url;		//合同详细信息列表地址
+	public $user_headimg_prefixurl;         //用户头像地址前缀
+	public $user_imgs_dir;			//头像存储目录
 	
 	public static  $_pdoinstance;		//pdo单例
 	
@@ -250,15 +250,15 @@ class scrap {
 		} else {
 			try {
 				$pdo = new PDO(
-						'mysql:host=' . self::DB_HOST . ';port=' . self::DB_PORT .';dbname=' . self::DB_NAME,
-						self::DB_USER,
-						self::DB_PWD,
-						[
-							PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
-							PDO::ATTR_CASE => PDO::CASE_LOWER,
-							PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-							PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"
-						]
+					'mysql:host=' . self::DB_HOST . ';port=' . self::DB_PORT .';dbname=' . self::DB_NAME,
+					self::DB_USER,
+					self::DB_PWD,
+					[
+						PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
+						PDO::ATTR_CASE => PDO::CASE_LOWER,
+						PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+						PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"
+					]
 				);
 					
 				return  $pdo;
